@@ -15,6 +15,15 @@ Only move on to the next question when you have enough detail that you would be 
 ```
 // Answer here
 
+1 - yarn install in terminal
+2 - yarn dev in terminal 
+
+Create the server page with and set up express and server. Create endpoint for home page and app.get. Create homepage with styling that includes header and footer partials. 
+
+create endpoint for the input query submission and trigger a handler function that adds the item to a global empty array. And the handler should send the last item of the array. 
+
+the homepage needs to append the item of the array to the list. 
+
 ```
 
 ## Two - `server.js`
@@ -28,6 +37,9 @@ _The NPM site might be a good place to start. Feel free to provide links as rele
 ```
 // Answer here
 
+body parser handles the post request and exposes it on req.body. It creates an object out of the post method input (like in a form)
+
+
 ```
 
 ## Three - `server.js`
@@ -36,6 +48,8 @@ Look at lines `23` and `24`. Explain the methods used. How are they different? W
 
 ```
 // Answer here
+
+get is a user request that exposes a page and post reflects a user submission 
 
 ```
 
@@ -46,6 +60,8 @@ Line `6`. That's new. What do you think it's for?
 ```
 // Answer here
 
+to make the code dry and place the handlers on another page. 
+
 ```
 
 ## Five - `handlers.js`
@@ -54,6 +70,8 @@ Explain line `1`. Where, why and how is `items` being used?
 
 ```
 // Answer here
+
+Line 1 is the empty array that will hold post request items recieved and will be updateed on each post request. 
 
 ```
 
@@ -64,6 +82,8 @@ Why is there `redirect` on line `11`;
 ```
 // Answer here
 
+there needs to be a response sent to the client or the browser will keep waiting 
+
 ``` 
 
 ## Seven - `handlers.js`
@@ -72,6 +92,8 @@ The `handle404` function is a more complex than we've seen thus far, what is the
 
 ```
 // Answer here
+
+It's checking through middleware to see what the headers allow for content type. 
 
 ```
 
@@ -82,6 +104,13 @@ Take a look at `homepage.ejs` and `todoInput.ejs`. What is happening in there? E
 ```
 // Answer here
 
+importing the header partial. 
+creates input container with the partial the input. 
+
+content container that iterating through the items array and adding an item to the list. Each submission re-renders the whole page and re inserts the array values. 
+
+inlcudes footer 
+
 ```
 
 ## Nine - `styles.scss`
@@ -91,6 +120,8 @@ What are lines `2` to `7` for this file? Where are these values being used? Take
 ```
 // Answer here
 
+they are sasss variables that can be used as dynamic variables globally 
+
 ```
 
 ## Ten - `_homepage.scss`
@@ -99,6 +130,10 @@ Line `16`. See if by searching the Sass documentation, you can determine what _e
 
 ```
 // Answer here
+
+It is using a sass function to calculate the content width which is a pre-set value minus 60px. 
+
+the #{} is to interpolate variables created. 
 
 ```
 
